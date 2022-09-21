@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with ChartJS</title>
+</head>
+<body>
+    <!--Give the chart its own container for responsiveness-->
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--The chart-->
+    <script>
+        const labels = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+        ];
+      
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [7, 10, 5, 2, 20, 30, 45, 35],
+          }]
+        };
+        
+        // How we want it to show up
+        const config = {
+          type: 'line', // You could change this to 'bar' for it to display a bar graph
+          data: data,
+          options: {}
+        };
+      </script>
+      <!--Render the chart using our configuration-->
+      <script>
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
+      
+</body>
+</html>
